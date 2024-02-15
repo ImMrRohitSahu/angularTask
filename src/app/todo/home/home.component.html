@@ -1,0 +1,52 @@
+<div class="container-fluid my-5">
+  <div class="row d-flex justify-content-center align-items-center">
+    <ng-container *ngIf="alltodos.length > 0; else noTodosFound">
+      <div
+        class="col-12 col-md-3 mt-4 p-3 todo-card mx-0 mx-md-3"
+        [class.borderGreen]="item.done"
+        [class.borderRed]="!item.done"
+        *ngFor="let item of alltodos"
+      >
+        <h5 class="m-0 title">Title - {{ item.title }}</h5>
+        <p class="m-0 my-4 description">Description - {{ item.description }}</p>
+        <div class="w-100 d-flex align-items-center">
+          <div
+            class="checkbox"
+            [class.green]="item.done"
+            [class.red]="!item.done"
+          ></div>
+          <h6
+            class="done m-0 ms-2"
+            [class.text-success]="item.done"
+            [class.text-danger]="!item.done"
+          >
+            {{ item.done ? "Completed" : "Pending" }}
+          </h6>
+        </div>
+        <div class="card-btn d-flex justify-content-center w-100 my-3 mb-md-0">
+          <button
+            type="button"
+            class="delete-btn"
+            (click)="deleteItem(item.id)"
+          >
+            Delete
+          </button>
+          <a
+            href=""
+            class="edit-btn btn rounded-0"
+            [routerLink]="['/todo/edit', item.id]"
+            >Edit</a
+          >
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noTodosFound>
+      <!-- Display message if there are no todos -->
+      <div class="col-12">
+        <p class="text-center fs-3 fw-bold text-decoration-underline">
+          No Task Found!!!
+        </p>
+      </div>
+    </ng-template>
+  </div>
+</div>

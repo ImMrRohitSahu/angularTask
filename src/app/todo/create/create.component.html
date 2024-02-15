@@ -1,0 +1,52 @@
+<div class="container my-3">
+  <div class="row m-0 p-0 my-4">
+    <div class="col-12 text-center">
+      <h4>Add New Todo Task</h4>
+    </div>
+  </div>
+  <div class="row p-0 m-0 d-flex justify-content-center">
+    <div class="col-12 col-md-8">
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Task Title"
+            [(ngModel)]="formdata.title"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <small class="small text-danger ms-2"
+            >Note - title should be less then 20 character.</small
+          >
+        </div>
+        <div class="form-group my-1">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Task Description"
+            [(ngModel)]="formdata.description"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <small class="small text-danger ms-2"
+            >Note - description should be less then 80 character.</small
+          >
+        </div>
+        <div class="form-check mb-3">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+            [(ngModel)]="formdata.done"
+            [ngModelOptions]="{standalone: true}"
+          />
+          <label class="form-check-label" for="exampleCheck1"
+            >Task Completed???</label
+          >
+        </div>
+        <button type="button" class="btn btn-primary" (click)="create()">
+          Add Now
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
