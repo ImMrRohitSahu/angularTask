@@ -11,7 +11,17 @@
         <p class="m-0 my-4 description">Description - {{ item.description }}</p>
         <div class="w-100 d-flex align-items-center">
           <div
-            class="checkbox"
+            class="checkbox circle-one"
+            [class.green]="item.done"
+            [class.red]="!item.done"
+          ></div>
+          <div
+            class="checkbox circle-two"
+            [class.green]="item.done"
+            [class.red]="!item.done"
+          ></div>
+          <div
+            class="checkbox circle-three"
             [class.green]="item.done"
             [class.red]="!item.done"
           ></div>

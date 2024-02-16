@@ -6,6 +6,15 @@
   overflow: hidden;
   transition: all ease 250ms;
 }
+.todo-card:hover .circle-one{
+  animation: circle-one 500ms 100ms alternate infinite;
+}
+.todo-card:hover .circle-two{
+  animation: circle-two 500ms 200ms alternate infinite;
+}
+.todo-card:hover .circle-three{
+  animation: circle-three 500ms 300ms alternate infinite;
+}
 .title {
   font-size: 14px;
 }
@@ -35,7 +44,7 @@
 
 .delete-btn {
   width: 50%;
-  background-color: rgb(178, 0, 0, 0.75);
+  background-color: rgb(178, 0, 0, 0.60);
   border: none;
   color: #ffff;
   font-size: 12px;
@@ -43,7 +52,7 @@
   transition: all ease 250ms;
 }
 .delete-btn:hover {
-  background-color: rgb(115, 0, 0);
+  background-color: rgb(167, 0, 0);
 }
 .edit-btn {
   width: 50%;
@@ -60,11 +69,11 @@
 
 .green {
   background-color: green;
-  border: 1px solid green;
+  border: 1px solid rgb(255, 255, 255);
 }
 .red {
   background-color: rgb(204, 0, 0);
-  border: 1px solid rgb(204, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .borderGreen:hover {
@@ -77,5 +86,30 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   transform: translateY(-5px);
-  background-color: rgba(255, 0, 0, 0.21);
+  background-color: rgba(255, 0, 0, 0.144);
+}
+
+@keyframes circle-one {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+}
+@keyframes circle-two {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+}
+@keyframes circle-three {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
 }
